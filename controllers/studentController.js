@@ -24,7 +24,7 @@ const grade = async (studentId) =>
     },
     {
         $group: {
-          _id: '$assignments',
+          _id: '$_id',
           // Average of all prices
           avg_score: { $avg: '$assignments.score' },
         },
