@@ -35,10 +35,12 @@ module.exports = {
   // Get all students
   getStudents(req, res) {
     Student.find()
+    
       .then(async (students) => {
         const studentObj = {
           students,
           headCount: await headCount(),
+          students: await grade(),
         };
         return res.json(studentObj);
       })
